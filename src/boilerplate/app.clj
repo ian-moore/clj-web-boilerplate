@@ -27,11 +27,11 @@
       bidi.ring/make-handler
       muuntaja.middleware/wrap-format))
 
-(defmethod integrant/init-key :dm-payments.integrant/jetty
+(defmethod integrant/init-key :boilerplate.integrant/jetty
   [_ opts]
   (ring-jetty/run-jetty app opts))
 
-(defmethod integrant/halt-key! :dm-payments.integrant/jetty
+(defmethod integrant/halt-key! :boilerplate.integrant/jetty
   [_ ^Server server]
   (.stop server))
 
